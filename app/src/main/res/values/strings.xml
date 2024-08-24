@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">The Best Restaurant</string>
+
+    <string name="auth_reg_title">Registration</string>
+    <string name="auth_login_title">Login</string>
+    <string name="auth_name">Name</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_sign_in">Sign In</string>
+    <string name="auth_sign_up">Sign Up</string>
+    <string name="auth_help_text">Already Have An Account?</string>
+    <string name="auth_help_text2">Don\'t Have An Account?</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_nav">Navigation</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_category">Category</string>
+    <string name="menu_offers">Offers</string>
+    <string name="menu_new_products">New Products</string>
+    <string name="menu_my_orders">My Orders</string>
+    <string name="menu_my_carts">My Carts</string>
+
+    <string name="home_search">Search...</string>
+    <string name="home_popular_products">Popular Products</string>
+    <string name="home_view_all">View All</string>
+    <string name="home_explore">Explore Products</string>
+    <string name="home_recommended">Recommended</string>
+
+    <string name="item_popular_products">Popular Products</string>
+    <string name="item_name">Name</string>
+    <string name="item_price">Price</string>
+    <string name="item_description">Description</string>
+    <string name="item_discount">Discount 20% off</string>
+    <string name="item_date">Current Date</string>
+    <string name="item_time">Current Date</string>
+
+    <string name="profile_name">Your Name</string>
+    <string name="profile_email">Your Email</string>
+    <string name="profile_phone">Phone Number</string>
+    <string name="profile_address">Your Address</string>
+    <string name="profile_update">Update</string>
+
+    <string name="products_empty">There Is No New Products Yet</string>
+
+    <string name="cart_empty">Your Cart Is Empty</string>
+    <string name="cart_total_price">Total Price</string>
+    <string name="cart_buy_now">Buy Now</string>
+    <string name="cart_add">Add To Cart</string>
+    <string name="cart_qty">Total Quantity</string>
+
+    <string name="orders_empty">You have not purchased anything yet</string>
+    <string name="orders_success">Your order has been successfully placed</string>
+    <string name="orders_thanks">Thank you for purchasing our product!</string>
+
+</resources>

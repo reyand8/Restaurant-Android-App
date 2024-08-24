@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EcommerceAndroidApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/main</item>
+    </style>
+
+    <style name="Theme.EcommerceAndroidApp" parent="Base.Theme.EcommerceAndroidApp" />
+    <style name="Theme.EcommerceAndroidApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.EcommerceAndroidApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
