@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F4f3f3</color>
+    <color name="btnSubmit">#B33E3E</color>
+    <color name="main">#EF6666</color>
+    <color name="main_dark">#892D2D</color>
+    <color name="bg_main">#48FFC5C5</color>
+    <color name="cat_bg">#DEDDDD</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
