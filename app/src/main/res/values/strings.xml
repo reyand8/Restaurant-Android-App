@@ -8,6 +8,7 @@
     <string name="auth_password">Password</string>
     <string name="auth_sign_in">Sign In</string>
     <string name="auth_sign_up">Sign Up</string>
+    <string name="auth_log_out">Log Out</string>
     <string name="auth_help_text">Already Have An Account?</string>
     <string name="auth_help_text2">Don\'t Have An Account?</string>
 
@@ -31,7 +32,7 @@
 
     <string name="item_popular_products">Popular Products</string>
     <string name="item_name">Name</string>
-    <string name="item_price">Price</string>
+    <string name="item_price">Price: $</string>
     <string name="item_description">Description</string>
     <string name="item_discount">Discount 20% off</string>
     <string name="item_date">Current Date</string>
