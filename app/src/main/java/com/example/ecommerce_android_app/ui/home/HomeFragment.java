@@ -75,6 +75,7 @@ public class HomeFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
         scrollView.setVisibility(View.GONE);
 
+
         //Popular Items
         popularRecView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 RecyclerView.HORIZONTAL, false));
@@ -101,6 +102,7 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
 
 //      Categories
         homeCatRecView.setLayoutManager(new LinearLayoutManager(getActivity(),
