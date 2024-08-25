@@ -1,16 +1,18 @@
 package com.example.ecommerce_android_app.models;
 
-public class RecommendedModel {
+import java.io.Serializable;
+
+public class RecommendedModel implements Serializable {
     String name;
     String description;
     String rating;
     String img_url;
-    int price;
+    String price;
 
     public RecommendedModel() {}
 
     public RecommendedModel(String name, String description,
-                            String rating, String img_url, int price) {
+                            String rating, String img_url, String price) {
         this.name = name;
         this.description = description;
         this.rating = rating;
@@ -50,11 +52,11 @@ public class RecommendedModel {
         this.img_url = img_url;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }
