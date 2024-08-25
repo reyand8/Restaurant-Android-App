@@ -1,6 +1,7 @@
 package com.example.ecommerce_android_app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerce_android_app.R;
+import com.example.ecommerce_android_app.activities.DetailedActivity;
 import com.example.ecommerce_android_app.models.RecommendedModel;
 
 import java.util.List;
@@ -40,6 +42,19 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         holder.name.setText(list.get(position).getName());
         holder.description.setText(list.get(position).getDescription());
         holder.rating.setText(list.get(position).getRating());
+        holder.price.setText(list.get(position).getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(context, DetailedActivity.class);
+                    intent.putExtra("detail", list.get(currentPosition));
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
@@ -49,13 +64,14 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name,description,rating;
+        TextView name,description,rating, price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rec_img);
             name = itemView.findViewById(R.id.rec_name);
             description = itemView.findViewById(R.id.rec_dec);
             rating = itemView.findViewById(R.id.rec_rating);
+            price = itemView.findViewById(R.id.rec_price);
         }
     }
 }
