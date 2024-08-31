@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.1"
+circleimageview = "3.1.0"
 glide = "4.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -16,8 +17,10 @@ navigationUi = "2.7.7"
 roundedimageview = "2.3.0"
 firebaseFirestore = "25.0.0"
 firebaseFunctions = "21.0.0"
+firebaseStorage = "21.0.0"
 
 [libraries]
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -33,6 +36,7 @@ navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version
 roundedimageview = { module = "com.github.makeramen:roundedimageview", version.ref = "roundedimageview" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-functions = { group = "com.google.firebase", name = "firebase-functions", version.ref = "firebaseFunctions" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
