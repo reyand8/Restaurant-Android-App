@@ -5,6 +5,7 @@ public class UserModel {
     String name;
     String email;
     String password;
+    String img;
 
     public UserModel() {}
 
@@ -37,4 +38,8 @@ public class UserModel {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getProfileImg() {return img;}
+
+    public void setProfileImg(String img) {this.img = img;}
 }
