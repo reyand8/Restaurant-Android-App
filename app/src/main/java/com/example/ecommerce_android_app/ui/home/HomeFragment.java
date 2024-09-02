@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
     RecyclerView popularRecView, homeCatRecView, recommendedRecView;
     FirebaseFirestore db;
 
-//    Search
+    //Search
     EditText search_box;
     private List<ViewAllModel> viewAllModelList;
     private RecyclerView recyclerViewSearch;
@@ -111,7 +111,7 @@ public class HomeFragment extends Fragment {
                 });
 
 
-//      Categories
+        //Categories
         homeCatRecView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 RecyclerView.HORIZONTAL,false));
         categoryList = new ArrayList<>();
@@ -124,7 +124,8 @@ public class HomeFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                HomeCategoryModel homeCategory = document.toObject(HomeCategoryModel.class);
+                                HomeCategoryModel homeCategory = document
+                                        .toObject(HomeCategoryModel.class);
                                 categoryList.add(homeCategory);
                                 homeAdapter.notifyDataSetChanged();
                             }
@@ -136,7 +137,7 @@ public class HomeFragment extends Fragment {
                 });
 
 
-//        Recommendations
+        //Recommendations
         recommendedRecView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 RecyclerView.HORIZONTAL,false));
         recommendedModelList = new ArrayList<>();
@@ -161,7 +162,8 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
-//        Search
+
+        //Search
         recyclerViewSearch = root.findViewById(R.id.search_rec);
         search_box = root.findViewById(R.id.search_box);
         viewAllModelList = new ArrayList<>();
@@ -171,14 +173,10 @@ public class HomeFragment extends Fragment {
         recyclerViewSearch.setHasFixedSize(true);
         search_box.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -189,10 +187,10 @@ public class HomeFragment extends Fragment {
                     searchProduct(s.toString());
                 }
             }
-
         });
         return root;
     }
+
     private void searchProduct(String type) {
         if (!type.isEmpty()){
             db.collection("AllProducts")
@@ -201,7 +199,6 @@ public class HomeFragment extends Fragment {
                         @SuppressLint("NotifyDataSetChanged")
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
                             if (task.isSuccessful() && task.getResult() != null) {
                                 viewAllModelList.clear();
                                 viewAllAdapter.notifyDataSetChanged();

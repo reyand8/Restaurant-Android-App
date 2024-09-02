@@ -1,7 +1,8 @@
 package com.example.ecommerce_android_app;
 
+import static com.example.ecommerce_android_app.R.id.nav_host_fragment_content_main;
+
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -25,11 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.bumptech.glide.Glide;
 
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     FirebaseStorage storage;
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
-        String uid = FirebaseAuth.getInstance().getUid();
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
@@ -61,10 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
         final NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.nav_host_fragment_content_main);
+                        .findFragmentById(nav_host_fragment_content_main);
         final NavController navController = navHostFragment.getNavController();
 
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this,
+                navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
         View headerView = navigationView.getHeaderView(0);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this,
-                R.id.nav_host_fragment_content_main);
+                nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

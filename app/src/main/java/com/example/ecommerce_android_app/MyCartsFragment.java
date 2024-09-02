@@ -75,8 +75,8 @@ public class MyCartsFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()){
-                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
-
+                            for (DocumentSnapshot documentSnapshot : task.getResult()
+                                    .getDocuments()){
                                 String documentId = documentSnapshot.getId();
                                 CartModel cartModel = documentSnapshot.toObject(CartModel.class);
 
