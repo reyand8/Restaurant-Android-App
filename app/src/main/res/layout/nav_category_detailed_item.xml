@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/nav_cat_name"
@@ -57,41 +57,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                >
                 <ImageView
-                    android:id="@+id/add_item"
-                    android:layout_width="30dp"
+                    android:layout_width="70dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/circle_add"
-                    android:layout_marginStart="6dp"/>
+                    android:src="@mipmap/ratingbar"
+                    android:layout_marginStart="-20dp"/>
                 <TextView
-                    android:id="@+id/quantity"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/nav_cat_rating"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="1"
-                    android:layout_marginTop="1dp"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
-                <ImageView
-                    android:id="@+id/remove_item"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/circle_remove"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="-14dp"
+                    android:text="5.0"
+                    android:layout_weight="1"/>
             </LinearLayout>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/add_to_cart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@string/cart_add"
-                android:textAllCaps="false"
-                android:textSize="11sp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="12dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:background="@drawable/btn_bg_detailed"
-                android:layout_gravity="end"/>
         </LinearLayout>
     </LinearLayout>
 
