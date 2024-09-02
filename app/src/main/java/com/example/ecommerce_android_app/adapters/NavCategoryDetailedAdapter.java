@@ -1,6 +1,7 @@
 package com.example.ecommerce_android_app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerce_android_app.R;
+import com.example.ecommerce_android_app.activities.DetailedActivity;
 import com.example.ecommerce_android_app.models.NavCategoryDetailedModel;
 
 import java.util.List;
@@ -38,7 +40,20 @@ public class NavCategoryDetailedAdapter
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.name.setText(list.get(position).getName());
-        holder.price.setText(String.valueOf(list.get(position).getPrice()));
+        holder.rating.setText(String.valueOf(list.get(position).getRating()));
+        holder.price.setText(list.get(position).getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    Intent intent = new Intent(context, DetailedActivity.class);
+                    intent.putExtra("detail", list.get(currentPosition));
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
@@ -48,12 +63,13 @@ public class NavCategoryDetailedAdapter
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name,price;
+        TextView name,price,rating;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.cat_nav_img);
             name= itemView.findViewById(R.id.nav_cat_name);
             price = itemView.findViewById(R.id.price);
+            rating = itemView.findViewById(R.id.nav_cat_rating);
         }
     }
 }
