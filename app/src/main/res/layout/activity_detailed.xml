@@ -85,10 +85,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <ImageView
-        android:id="@+id/add_item"
+        android:id="@+id/remove_item"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:src="@drawable/circle_add"
+        android:src="@drawable/circle_remove"
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,14 +104,14 @@
         app:layout_goneMarginStart="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/add_item"
+        app:layout_constraintStart_toEndOf="@id/remove_item"
         app:layout_constraintTop_toTopOf="@id/relativeLayout"
         android:layout_marginStart="4dp"/>
     <ImageView
-        android:id="@+id/remove_item"
+        android:id="@+id/add_item"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:src="@drawable/circle_remove"
+        android:src="@drawable/circle_add"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/quantity"
