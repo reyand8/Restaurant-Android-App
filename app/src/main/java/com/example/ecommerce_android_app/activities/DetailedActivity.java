@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerce_android_app.R;
+import com.example.ecommerce_android_app.models.NavCategoryDetailedModel;
 import com.example.ecommerce_android_app.models.RecommendedModel;
 import com.example.ecommerce_android_app.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,6 +42,7 @@ public class DetailedActivity extends AppCompatActivity {
 
     ViewAllModel viewAllModel = null;
     RecommendedModel recommendedModel = null;
+    NavCategoryDetailedModel navCategoryDetailedModel = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,10 @@ public class DetailedActivity extends AppCompatActivity {
         if (object instanceof RecommendedModel){
             recommendedModel = (RecommendedModel) object;
         }
+        if (object instanceof NavCategoryDetailedModel){
+            navCategoryDetailedModel = (NavCategoryDetailedModel) object;
+        }
+
         quantity = findViewById(R.id.quantity);
         detailedImg = findViewById(R.id.detailedImg);
         addItem = findViewById(R.id.add_item);
@@ -83,6 +89,13 @@ public class DetailedActivity extends AppCompatActivity {
             description.setText(recommendedModel.getDescription());
             price.setText("Price: $"+recommendedModel.getPrice());
             totalPrice = Integer.parseInt(recommendedModel.getPrice()) * totalQuantity;
+        }
+        if (navCategoryDetailedModel != null){
+            Glide.with(getApplicationContext()).load(navCategoryDetailedModel.getImg_url()).into(detailedImg);
+            rating.setText(navCategoryDetailedModel.getRating());
+            description.setText(navCategoryDetailedModel.getDescription());
+            price.setText("Price: $"+navCategoryDetailedModel.getPrice());
+            totalPrice = Integer.parseInt(navCategoryDetailedModel.getPrice()) * totalQuantity;
         }
 
         addToCart = findViewById(R.id.add_to_cart);
