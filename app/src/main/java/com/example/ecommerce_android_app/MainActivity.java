@@ -2,6 +2,7 @@ package com.example.ecommerce_android_app;
 
 import static com.example.ecommerce_android_app.R.id.nav_host_fragment_content_main;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
     
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,13 @@ public class MainActivity extends AppCompatActivity {
         TextView headerName = headerView.findViewById(R.id.menu_name);
         TextView headerEmail = headerView.findViewById(R.id.menu_email);
         CircleImageView headerImg = headerView.findViewById(R.id.menu_img);
+
+        headerName.setText(null);
+        headerEmail.setText("The Best Restaurant");
+        Glide.with(MainActivity.this)
+                .load(R.mipmap.icon_profile)
+                .into(headerImg);
+
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -85,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                                     .getProfileImg()).into(headerImg);
                         } else {
                             Glide.with(MainActivity.this)
-                                    .load(R.mipmap.profile_img)
+                                    .load(R.mipmap.icon_profile)
                                     .into(headerImg);
                         }
                     }
