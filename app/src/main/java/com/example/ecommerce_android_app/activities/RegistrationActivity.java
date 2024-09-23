@@ -115,7 +115,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         else {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(RegistrationActivity.this,
-                                    "Error"+task.getException(), Toast.LENGTH_SHORT).show();
+                                    "Error "+task.getException(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

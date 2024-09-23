@@ -64,7 +64,7 @@ public class CategoryFragment extends Fragment {
                             }
                         } else {
                             Toast.makeText(getActivity(),
-                                    "Error"+task.getException(), Toast.LENGTH_SHORT).show();
+                                    "Error "+task.getException(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                             recyclerView.setVisibility(View.VISIBLE);
                         }
