@@ -2,6 +2,8 @@
 
 Java, Android SDK, Firebase
 
+**NOTE:** Add your API KEY to the `google-services` file.
+
 _________________________
 _________________________
 
